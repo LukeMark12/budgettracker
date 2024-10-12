@@ -1,0 +1,132 @@
+/* General Styles (For desktop/larger screens) */
+.budget-tracker {
+    border-collapse: collapse;
+    min-width: 750px;
+}
+
+.budget-tracker * {
+    font-family: sans-serif;
+}
+
+.budget-tracker th {
+    text-align: left;
+    padding: 10px 20px;
+    border-bottom: 2px solid #009578;
+}
+
+.budget-tracker td {
+    padding: 5px;
+}
+
+.input,
+.delete-entry {
+    height: 30px;
+    font-size: 13px;
+    padding: 0 10px;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.input {
+    border: 1px solid #dddddd;
+    border-radius: 5px;
+    outline: none;
+}
+
+.input:focus {
+    border-color: #bbbbbb;
+}
+
+.delete-entry {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    background: none;
+    color: red;
+    border: none;
+    border-radius: 50%;
+    outline: none;
+    cursor: pointer;
+}
+
+.delete-entry:hover {
+    background: rgba(255, 0, 0, 0.1);
+}
+
+.controls,
+.summary {
+    text-align: right;
+}
+
+/* Media Queries for Tablets (iPads) */
+@media screen and (max-width: 768px) {
+    .budget-tracker {
+        min-width: 100%; /* Make the table fill the screen */
+    }
+
+    .budget-tracker th, .budget-tracker td {
+        padding: 10px 15px; /* Reduce padding for smaller screens */
+        font-size: 14px;    /* Slightly smaller font */
+    }
+
+    .controls,
+    .summary {
+        text-align: center; /* Center text on smaller screens */
+    }
+}
+
+/* Media Queries for Mobile Devices (Smartphones) */
+@media screen and (max-width: 480px) {
+    .budget-tracker {
+        min-width: 100%; /* Full width for mobile screens */
+    }
+
+    .budget-tracker th, .budget-tracker td {
+        padding: 8px 10px; /* Further reduce padding for mobile */
+        font-size: 12px;    /* Smaller font for mobile */
+    }
+
+    .input,
+    .delete-entry {
+        height: 25px; /* Adjust height of inputs and buttons */
+        font-size: 12px; /* Smaller font for mobile */
+        padding: 0 5px;
+    }
+
+    .delete-entry {
+        width: 25px; /* Reduce width of delete button */
+    }
+
+    .controls,
+    .summary {
+        text-align: center; /* Center text on mobile */
+    }
+
+    /* Additional mobile-friendly styles */
+    /* Stack elements vertically */
+    .controls, 
+    .summary {
+        display: block;
+        margin-bottom: 10px;
+    }
+
+    /* Ensure buttons are full width if needed */
+    .input {
+        width: 100%; /* Input fields take full width on mobile */
+    }
+
+    /* Make table rows take full width, and add space between rows */
+    .budget-tracker tr {
+        display: block;
+        margin-bottom: 10px;
+    }
+
+    /* Make sure the table headers are still clear on mobile */
+    .budget-tracker th, 
+    .budget-tracker td {
+        display: block;
+        text-align: left;
+        padding: 10px;
+    }
+}
